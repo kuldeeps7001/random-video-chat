@@ -171,6 +171,11 @@ function createPeerConnection() {
   // Handle remote stream
   peerConnection.ontrack = (event) => {
     remoteVideo.srcObject = event.streams[0];
+    const spinner = document.querySelector('.loading-spinner');
+    if (spinner) {
+      spinner.classList.add('fade-out');
+      setTimeout(() => spinner.remove(), 400);
+    }
     statusOverlay.classList.add('hidden');
     updateStatus('Connected', 'online');
     isConnected = true;

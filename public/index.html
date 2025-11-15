@@ -3,83 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Video Chat</title>
+    <title>Random Video Chat - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <style>
+      .hero {text-align:center; color:#fff; padding:60px 20px;}
+      .hero h1 {font-size:3rem; margin-bottom:20px;}
+      .hero p.lead {font-size:1.25rem; max-width:800px; margin:0 auto 30px; line-height:1.6;}
+      .features {display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin:40px 0;}
+      .feature {background:rgba(255,255,255,0.15); color:#fff; padding:20px; border-radius:15px; backdrop-filter:blur(6px); box-shadow:0 10px 25px rgba(0,0,0,0.25);} 
+      .feature h3 {margin-bottom:10px; font-size:1.2rem;}
+      .cta {text-align:center; margin:50px 0;}
+      .cta a {display:inline-block; background:#10b981; color:#fff; padding:18px 50px; font-size:1.3rem; font-weight:600; border-radius:40px; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.3); transition:.3s;}
+      .cta a:hover {transform:translateY(-3px); box-shadow:0 15px 30px rgba(0,0,0,0.35);} 
+      .trust {display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:40px;}
+      .trust-item {color:#fff; background:rgba(255,255,255,0.1); padding:15px 25px; border-radius:30px; font-size:0.95rem; backdrop-filter:blur(4px);} 
+      footer.simple {text-align:center; color:#fff; opacity:.8; font-size:.85rem; margin-top:60px;}
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🎥 Random Video Chat</h1>
-            <p class="subtitle">Connect with strangers worldwide</p>
-        </header>
-
-        <div class="main-content">
-            <!-- Video Section -->
-            <div class="video-section">
-                <div class="video-container">
-                    <video id="remoteVideo" autoplay playsinline></video>
-                    <div class="video-overlay" id="statusOverlay">
-                        <div class="status-message" id="statusMessage">
-                            Click "Start" to begin chatting
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="video-container local">
-                    <video id="localVideo" autoplay muted playsinline></video>
-                    <div class="video-label">You</div>
-                </div>
+        <section class="hero">
+            <div class="logo-wrapper"><img src="/logo.png" alt="Random Video Chat" class="app-logo" /></div>
+            <p class="lead">Connect instantly with strangers worldwide. Anonymous, fast, and fun. Jump into a live video conversation in seconds – no signup, no hassle.</p>
+            <div class="trust">
+              <div class="trust-item">🔒 Anonymous & Secure</div>
+              <div class="trust-item">⚡ Real-time Matching</div>
+              <div class="trust-item">💬 Video + Text Chat</div>
+              <div class="trust-item">📱 Mobile Friendly</div>
+              <div class="trust-item">🆓 100% Free</div>
             </div>
+        </section>
 
-            <!-- Chat Section -->
-            <div class="chat-section">
-                <div class="chat-header">
-                    <span>💬 Text Chat</span>
-                </div>
-                <div class="chat-messages" id="chatMessages">
-                    <div class="system-message">Send a message to start chatting...</div>
-                </div>
-                <div class="chat-input-container">
-                    <input 
-                        type="text" 
-                        id="chatInput" 
-                        placeholder="Type a message..." 
-                        disabled
-                    >
-                    <button id="sendBtn" disabled>Send</button>
-                </div>
-            </div>
+
+        <div class="cta">
+          <a href="/chat">🚀 Connect to a Stranger</a>
         </div>
 
-        <!-- Controls -->
-        <div class="controls">
-            <button id="startBtn" class="btn btn-primary">
-                <span class="btn-icon">▶️</span>
-                Start
-            </button>
-            <button id="nextBtn" class="btn btn-secondary" disabled>
-                <span class="btn-icon">⏭️</span>
-                Next
-            </button>
-            <button id="stopBtn" class="btn btn-danger" disabled>
-                <span class="btn-icon">⏹️</span>
-                Stop
-            </button>
-        </div>
 
-        <!-- Info Footer -->
-        <footer class="info-footer">
-            <div class="info-item">
-                <span class="info-label">Status:</span>
-                <span id="connectionStatus" class="status-offline">Offline</span>
+        <section class="features">
+            <div class="feature">
+              <h3>🚀 Instant Matching</h3>
+              <p>Find a partner in seconds using our lightweight real-time queue system.</p>
             </div>
-            <div class="info-item">
-                <span class="info-label">⚠️ Be respectful and follow community guidelines</span>
+            <div class="feature">
+              <h3>🎧 High Quality Media</h3>
+              <p>Powered by WebRTC for direct peer-to-peer audio and video streaming.</p>
             </div>
+            <div class="feature">
+              <h3>💬 Dual Mode Chat</h3>
+              <p>Talk face-to-face while sending messages for links, reactions, or silent chatting.</p>
+            </div>
+            <div class="feature">
+              <h3>🛡️ No Account Needed</h3>
+              <p>Zero friction. Open the site, click connect, and you are live – completely anonymous.</p>
+            </div>
+            <div class="feature">
+              <h3>📱 Optimized for Mobile</h3>
+              <p>Responsive layout ensures smooth experience on phones, tablets, and desktops.</p>
+            </div>
+            <div class="feature">
+              <h3>🧠 Built for Scale</h3>
+              <p>Architecture ready for clustering, load balancing, and future feature expansion.</p>
+            </div>
+        </section>
+
+        <footer class="simple">
+          <p>Be respectful. Conversations are anonymous and ephemeral.</p>
+          <p style="margin-top:10px;">
+            <a href="/privacy" style="text-decoration:underline; margin-right:15px;">Privacy</a>
+            <a href="/terms" style="text-decoration:underline; margin-right:15px;">Terms</a>
+            <a href="/guidelines" style="text-decoration:underline;">Guidelines</a>
+          </p>
+          <p>© 2025 Random Video Chat</p>
         </footer>
     </div>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
 </body>
 </html>

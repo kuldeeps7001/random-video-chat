@@ -7,6 +7,44 @@ const path = require('path');
 // Serve static files
 app.use(express.static('public'));
 
+// Home route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+// Chat route updated to new path
+app.get('/chat', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'chat', 'index.html'));
+});
+
+app.get('/privacy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'privacy.html'));
+});
+app.get('/terms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'terms.html'));
+});
+app.get('/guidelines', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'guidelines.html'));
+});
+
+app.get('/legal/privacy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'privacy.html'));
+});
+app.get('/legal/terms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'terms.html'));
+});
+app.get('/legal/guidelines', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'legal', 'guidelines.html'));
+});
+
+app.get('/legal/:page', (req, res) => {
+  const page = req.params.page.toLowerCase();
+  const allowed = ['privacy', 'terms', 'guidelines'];
+  if (!allowed.includes(page)) {
+    return res.status(404).send('Not found');
+  }
+  res.sendFile(path.join(__dirname, 'public', 'legal', `${page}.html`));
+});
+
 // Store waiting users
 let waitingUser = null;
 let activeRooms = new Map();
